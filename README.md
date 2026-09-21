@@ -1,5 +1,7 @@
 # Portfolio de Carla Franco
 
+**En línea: https://carlafranco.vercel.app**
+
 Sitio bilingüe (inglés / español) que presenta el trabajo de Carla Franco como copywriter de respuesta directa.
 
 - `/` — pantalla para elegir idioma

@@ -1,6 +1,10 @@
 # Portfolio de Carla Franco — Copywriter de respuesta directa
 
 Sitio web portfolio bilingüe (inglés / español) para presentar el trabajo de copywriting de Carla Franco.
+
+**Publicado en https://carlafranco.vercel.app** · código en `web/` · repo https://github.com/scfrancocarla-code/portfolio
+Para publicar un cambio: editar → `cd web && npm run build` → `git commit` → `git push` (Vercel publica solo).
+
 Leer también [MEMORY.md](MEMORY.md): historial de decisiones, estado actual y próximos pasos.
 
 ## Objetivo

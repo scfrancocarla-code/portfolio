@@ -4,7 +4,18 @@ Registro vivo del proyecto: decisiones, avances y pendientes. Lo más reciente a
 
 ## Estado actual
 
-**Fase:** 8 lista (2026-09-21). El sitio está completo en los dos idiomas y subido a GitHub: https://github.com/scfrancocarla-code/portfolio (rama `main`). Falta el control de calidad fino (fase 7: Lighthouse y pruebas en varios tamaños) y publicarlo en Vercel (fase 9).
+**Fase:** ✅ Proyecto terminado y publicado (2026-09-21). Carla confirmó que funciona todo bien.
+
+## 🌐 El sitio en vivo
+
+- **Página publicada:** https://carlafranco.vercel.app (verificada: portada, `/en/` y `/es/` con los 8 formatos)
+- **Repositorio:** https://github.com/scfrancocarla-code/portfolio (rama `main`)
+- **Proyecto en Vercel:** `carlafranco`, equipo "scfrancocarla-code's projects" (plan Hobby gratuito)
+- **Configuración de Vercel:** preset Astro · **Root Directory `web`** (dato clave: el sitio no está en la raíz del repositorio) · build `npm run build` · salida `dist`
+
+### Cómo publicar un cambio, de ahora en más
+Editar → `cd web && npm run build` (para comprobar que compila) → `git add -A && git commit -m "..."` → `git push`.
+Vercel publica solo en 1 o 2 minutos. No hay que volver a tocar nada de la configuración.
 
 ### Cómo levantar el proyecto
 ```bash
@@ -28,9 +39,9 @@ npm run build && npm run preview          # versión final
 4. ✅ Base del proyecto web (Astro 7.3.3, rutas, tokens, contenido por idioma, git init + primer commit)
 5. ✅ Optimización de assets (WebP en varios anchos, 1,5 MB en total)
 6. ✅ Desarrollo por secciones — los 8 formatos en español ya tienen su copy completo (2026-09-21)
-7. ⏳ Control de calidad (Playwright, Lighthouse, metadatos)
-8. ✅ GitHub: https://github.com/scfrancocarla-code/portfolio (3 commits en `main`)
-9. ⬜ Publicación en Vercel
+7. ✅ Control de calidad durante el desarrollo (pruebas con Playwright en escritorio y celular, sin desbordes; falta, si se quiere, pasar Lighthouse sobre el sitio ya publicado)
+8. ✅ GitHub: https://github.com/scfrancocarla-code/portfolio
+9. ✅ Publicación en Vercel: https://carlafranco.vercel.app
 
 ## Sistema visual aprobado (2026-09-16)
 
@@ -177,6 +188,10 @@ Los cuatro formatos que en el mockup mostraban una nota ya tienen su copy comple
 - **VSL One Trade**: 10 etapas numeradas, frases resaltadas y notas al costado. Los bloques "Esto es la solución perfecta para ti si…" y "2 alternativas según el CTA" van en recuadro `.box`, porque en el Word eran notas y no guion corrido.
 - Se agregó `emailLayout(emails, projs)`: una sola función arma cualquier bloque de emails con sus pestañas y libretas.
 
-## Pendientes / preguntas abiertas
-- Revisión del mockup v1 por parte de Carla.
-- Confirmar: indicador "× vs. benchmark" en resultados; texto cortado de la descripción de OGA.
+## Ideas para más adelante (ninguna es urgente)
+
+- Dominio propio (por ejemplo `carlafranco.com`): se conecta desde Vercel → Settings → Domains.
+- Pasar Lighthouse al sitio publicado y ajustar lo que aparezca.
+- Imagen de vista previa para cuando se comparte el enlace en LinkedIn (hoy hay título y descripción, pero no imagen).
+- Cargar las imágenes que faltan del email de Ibiza Living, si Carla las consigue (hoy dice "-imagen del dossier-" y "-imagen de render-", tal como ella pidió).
+- El video "Video car señalando.mp4" quedó sin uso, por decisión de Carla del 2026-09-18.
