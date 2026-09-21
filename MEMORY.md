@@ -4,7 +4,18 @@ Registro vivo del proyecto: decisiones, avances y pendientes. Lo más reciente a
 
 ## Estado actual
 
-**Fase:** 4 de 9 — Mockup v5 aprobado (2026-09-21). Empieza el desarrollo del sitio real en `web/`, tomando el mockup v5 como referencia exacta.
+**Fase:** 4 lista y 6 muy avanzada (2026-09-21). El sitio real ya está en `web/`, compila y funciona en los dos idiomas. Falta el control de calidad (fase 7), subirlo a GitHub (8) y publicarlo en Vercel (9).
+
+### Cómo levantar el proyecto
+```bash
+cd web && npm install && npm run dev     # http://localhost:4321
+npm run build && npm run preview          # versión final
+```
+
+### Datos de la cuenta de GitHub (dados por Carla el 2026-09-21)
+- Cuenta: https://github.com/scfrancocarla-code
+- Email para los commits: scfrancocarla@gmail.com (configurado solo en este repositorio, con nombre "Carla Franco")
+- Falta crear el repositorio remoto y hacer el primer push.
 
 - Sistema visual + plan: https://claude.ai/artifact/UX84ipB5RKFa78NKomhrFp
 - Mockup v1 (navegable, escritorio/celular): https://claude.ai/artifact/9YcbbajfqEexuFEK3PdJSW
@@ -14,9 +25,9 @@ Registro vivo del proyecto: decisiones, avances y pendientes. Lo más reciente a
 1. ✅ Entendimiento del proyecto
 2. ✅ Sistema visual (colores y tipografía)
 3. ✅ Mockup navegable (v5 aprobado el 2026-09-21)
-4. ⏳ Base del proyecto web (Astro, rutas, tokens, contenido por idioma, git init)
-5. ⬜ Optimización de assets (versión final)
-6. ⬜ Desarrollo por secciones
+4. ✅ Base del proyecto web (Astro 7.3.3, rutas, tokens, contenido por idioma, git init + primer commit)
+5. ✅ Optimización de assets (WebP en varios anchos, 1,5 MB en total)
+6. ✅ Desarrollo por secciones (queda pendiente cargar el copy español de Anuncios, Email evergreen, Email lanzamientos y VSL)
 7. ⬜ Control de calidad (Playwright, Lighthouse, metadatos)
 8. ⬜ GitHub
 9. ⬜ Publicación en Vercel
@@ -144,6 +155,17 @@ Portfolio ingles Carla/        ← repositorio git (raíz)
 │  └─ public/assets/…          ← imágenes optimizadas (varios anchos)
 └─ (docx, png, jpg, mp4 originales: quedan fuera del repo)
 ```
+
+## Cómo quedó armado el sitio (fase 4, 2026-09-21)
+
+- **Astro 7.3.3**, sitio estático. Páginas: `src/pages/index.astro` (idioma), `en/index.astro`, `es/index.astro`.
+- **El copy vive en `src/data/content.js`**, extraído del mockup aprobado: objetos `UI` (textos de interfaz), `CARDS` (tarjetas) y `RENDER` (una función por servicio). Es el único archivo que hay que tocar para sumar o quitar proyectos.
+- **Los ejemplos se generan en el build**, no en el navegador: van todos en el HTML y el JavaScript solo muestra u oculta. Así el copy lo lee Google y se ve aunque falle el JS.
+- **`src/scripts/site.js`** maneja: elegir formato, animaciones al hacer scroll, pestañas de emails y de etapas de anuncios, "leer guion completo" y ampliar capturas. Respeta "reducir movimiento".
+- La pantalla de idioma **no usa JavaScript**: son dos enlaces.
+- Cada formato tiene su propia dirección (`/en/#vsl`, `/es/#es-res`), así se puede compartir un ejemplo puntual.
+- `global.css` salió del mockup; las consultas de contenedor pasaron a consultas de medios.
+- Peso del build: 1,7 MB en total (HTML 40–108 KB por página, con el CSS incrustado).
 
 ## Pendientes / preguntas abiertas
 - Revisión del mockup v1 por parte de Carla.
