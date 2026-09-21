@@ -4,7 +4,7 @@ Registro vivo del proyecto: decisiones, avances y pendientes. Lo más reciente a
 
 ## Estado actual
 
-**Fase:** 4 lista y 6 muy avanzada (2026-09-21). El sitio real ya está en `web/`, compila y funciona en los dos idiomas. Falta el control de calidad (fase 7), subirlo a GitHub (8) y publicarlo en Vercel (9).
+**Fase:** 8 lista (2026-09-21). El sitio está completo en los dos idiomas y subido a GitHub: https://github.com/scfrancocarla-code/portfolio (rama `main`). Falta el control de calidad fino (fase 7: Lighthouse y pruebas en varios tamaños) y publicarlo en Vercel (fase 9).
 
 ### Cómo levantar el proyecto
 ```bash
@@ -27,9 +27,9 @@ npm run build && npm run preview          # versión final
 3. ✅ Mockup navegable (v5 aprobado el 2026-09-21)
 4. ✅ Base del proyecto web (Astro 7.3.3, rutas, tokens, contenido por idioma, git init + primer commit)
 5. ✅ Optimización de assets (WebP en varios anchos, 1,5 MB en total)
-6. ✅ Desarrollo por secciones (queda pendiente cargar el copy español de Anuncios, Email evergreen, Email lanzamientos y VSL)
-7. ⬜ Control de calidad (Playwright, Lighthouse, metadatos)
-8. ⬜ GitHub
+6. ✅ Desarrollo por secciones — los 8 formatos en español ya tienen su copy completo (2026-09-21)
+7. ⏳ Control de calidad (Playwright, Lighthouse, metadatos)
+8. ✅ GitHub: https://github.com/scfrancocarla-code/portfolio (3 commits en `main`)
 9. ⬜ Publicación en Vercel
 
 ## Sistema visual aprobado (2026-09-16)
@@ -166,6 +166,16 @@ Portfolio ingles Carla/        ← repositorio git (raíz)
 - Cada formato tiene su propia dirección (`/en/#vsl`, `/es/#es-res`), así se puede compartir un ejemplo puntual.
 - `global.css` salió del mockup; las consultas de contenedor pasaron a consultas de medios.
 - Peso del build: 1,7 MB en total (HTML 40–108 KB por página, con el CSS incrustado).
+
+## Copy en español cargado (2026-09-21)
+
+Los cuatro formatos que en el mockup mostraban una nota ya tienen su copy completo:
+
+- **Anuncios**: 5 proyectos con pestañas (Foresta, India Estudio, Nicolás Parisi, Superlativo, Globalitae) y 7 guiones. Se sumó el modo `.ads-grid.tabbed` con pestañas siempre visibles, porque en español los anuncios se agrupan por proyecto y no por etapa de conciencia.
+- **Email evergreen**: Paniora (#Leasehold), Foresta (#Grupo de WhatsApp), India Tatuajes (#Hype).
+- **Email de lanzamiento**: Superlativo (pre-webinar) e Ibiza Living (post-webinar), con los textos "-imagen del dossier-" y "-imagen de render-" tal cual.
+- **VSL One Trade**: 10 etapas numeradas, frases resaltadas y notas al costado. Los bloques "Esto es la solución perfecta para ti si…" y "2 alternativas según el CTA" van en recuadro `.box`, porque en el Word eran notas y no guion corrido.
+- Se agregó `emailLayout(emails, projs)`: una sola función arma cualquier bloque de emails con sus pestañas y libretas.
 
 ## Pendientes / preguntas abiertas
 - Revisión del mockup v1 por parte de Carla.
