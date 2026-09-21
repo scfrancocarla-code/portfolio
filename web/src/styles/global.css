@@ -221,6 +221,16 @@ mark.hl.pre{background-size:0% 78%}
 .split .row>div{background:var(--lino);border-radius:4px;padding:7px 8px}
 .split .row>div:last-child{background:var(--t-sal)}
 .split .sc{font:700 .58rem/1 var(--sans);letter-spacing:.18em;color:var(--grafito);margin-top:4px}
+/* ES: los anuncios se agrupan por proyecto, siempre con pestañas */
+.ads-tabs.always{display:flex}
+.ads-grid.tabbed{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-flow:row;align-items:start}
+.ads-grid.tabbed>[data-stage]{display:none}
+.ads-grid.tabbed>[data-stage].show{display:grid}
+.ads-grid.tabbed .stage-h{grid-column:1/-1;border-bottom:0;padding:0 0 10px}
+.ads-grid.tabbed .stage-h .quads{margin-top:10px}
+.ads-grid.tabbed .stage-h .quads p{font-family:var(--sans);font-size:.785rem;line-height:1.5;color:var(--grafito)}
+.vs .box{background:var(--lino);border:1px solid var(--linea);border-left:3px solid var(--rosa);border-radius:6px;padding:12px 14px;display:grid;gap:6px;font-size:.93rem;line-height:1.55}
+.vs .box b{font:700 .7rem/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-prof)}
 .ads-foot{text-align:center;margin-top:26px;font-family:var(--mano);font-size:1.15rem;color:var(--nota)}
 .ads-foot svg{width:18px;height:16px;vertical-align:-2px;margin-right:6px;fill:none;stroke:var(--nota);stroke-width:1.6}
 
@@ -408,7 +418,7 @@ dialog.lb button{position:fixed;top:14px;right:14px;background:var(--lino);borde
 /* ───────── Responsive (container queries: funcionan también en la vista celular del mockup) ───────── */
 @media (max-width: 1020px){
   .cards,.cards.c4{--cols:2}
-  .ads-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row}
+  .ads-grid,.ads-grid.tabbed{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row}
   .ads-grid>[data-stage]{display:none}
   .ads-grid>[data-stage].show{display:grid}
   .ads-tabs{display:flex}
