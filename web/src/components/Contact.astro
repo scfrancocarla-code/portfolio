@@ -1,0 +1,27 @@
+---
+const { ui } = Astro.props;
+---
+<section class="contact" id="contact">
+  <div class="wrap grid">
+    <div class="rv">
+      <p class="eyebrow">{ui.cEyebrow}</p>
+      <h2 set:html={ui.cTitle} />
+    </div>
+    <div class="ways rv" style="--d:120ms">
+      <a class="way" href="mailto:scfrancocarla@gmail.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+        <span><b>Email</b><span>scfrancocarla@gmail.com</span></span>
+      </a>
+      <a class="way" href="https://www.linkedin.com/in/carla-franco/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"></path></svg>
+        <span><b>LinkedIn</b><span>linkedin.com/in/carla-franco</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+<div class="wrap foot">© {new Date().getFullYear()} Carla Franco · {ui.role}</div>
+
+<style>
+  .way span { display: block; }
+  .way > span { min-width: 0; }
+</style>

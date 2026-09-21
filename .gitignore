@@ -1,0 +1,19 @@
+# Dependencias y builds
+node_modules/
+web/dist/
+web/.astro/
+.vercel/
+
+# Archivos originales de trabajo (pesados, no van al repositorio).
+# Las versiones optimizadas viven en web/public/assets/
+*.docx
+*.png
+*.jpg
+*.jpeg
+*.mp4
+!web/public/assets/**
+
+# Sistema
+.DS_Store
+Thumbs.db
+.playwright-mcp/

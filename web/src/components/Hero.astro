@@ -1,0 +1,35 @@
+---
+const { ui } = Astro.props;
+---
+<section class="hero">
+  <div class="wrap grid">
+    <div class="copy">
+      <h1 class="rv" set:html={ui.h1} />
+      <p class="funnel rv" style="--d:100ms">{ui.funnel}</p>
+      <p class="ai rv" style="--d:170ms"><b>{ui.aiQ}</b> <span set:html={ui.aiA} /></p>
+      <div class="ctas rv" style="--d:240ms">
+        <a class="btn dark" href="#formats">{ui.cta}<span class="ar" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="photo rv" style="--d:120ms">
+      <div class="blob"></div>
+      <div class="blob2"></div>
+      <img
+        src="/assets/foto-portada-900.webp"
+        srcset="/assets/foto-portada-520.webp 520w, /assets/foto-portada-900.webp 900w"
+        sizes="(max-width: 760px) 56vw, 390px"
+        width="900"
+        height="1200"
+        alt="Carla Franco"
+        fetchpriority="high"
+      />
+    </div>
+  </div>
+  <a class="down" href="#formats" aria-label={ui.navFormats}>
+    <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 5l5 5 5-5"></path></svg>
+  </a>
+</section>
+
+<style>
+  .btn.dark, .down { text-decoration: none; }
+</style>

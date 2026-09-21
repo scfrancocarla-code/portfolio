@@ -1,0 +1,26 @@
+---
+const { ui } = Astro.props;
+---
+<section class="why" id="why">
+  <div class="wrap grid">
+    <div class="ph rv">
+      <img
+        src="/assets/foto-porque-760.webp"
+        srcset="/assets/foto-porque-460.webp 460w, /assets/foto-porque-760.webp 760w"
+        sizes="(max-width: 760px) 230px, 290px"
+        width="760"
+        height="1351"
+        alt="Carla Franco"
+        loading="lazy"
+      />
+    </div>
+    <div class="txt">
+      <p class="eyebrow rv">{ui.whyEyebrow}</p>
+      <h2 class="rv" style="--d:60ms">{ui.whyTitle}</h2>
+      <p class="rv" style="--d:120ms">{ui.why1}</p>
+      <p class="rv" style="--d:170ms">{ui.why2}</p>
+      <p class="rv" style="--d:220ms">{ui.why3}</p>
+      <blockquote class="rv" style="--d:280ms">{ui.whyQuote}</blockquote>
+    </div>
+  </div>
+</section>

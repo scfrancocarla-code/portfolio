@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Carla Franco · Direct response copywriter"
+  description="Portfolio de Carla Franco, copywriter de respuesta directa. Elegí el idioma: English o Español."
+  lang="es"
+  path="/"
+>
+  <section class="lang" aria-label="Elegir idioma / Choose language">
+    <div class="inner">
+      <h1 class="sig">Carla Franco</h1>
+      <svg class="arrows" viewBox="0 0 440 74" aria-hidden="true">
+        <path pathLength="1" d="M160 6 C 118 16, 96 36, 88 64"></path>
+        <path pathLength="1" d="M79 54 L88 66 L98 56"></path>
+        <path pathLength="1" d="M280 6 C 322 16, 344 36, 352 64"></path>
+        <path pathLength="1" d="M342 56 L352 66 L361 54"></path>
+      </svg>
+      <div class="choices">
+        <a class="choice" href="/en/" lang="en">English</a>
+        <a class="choice" href="/es/" lang="es">Spanish</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* La pantalla de idioma no necesita JavaScript: son dos enlaces. */
+  .choice {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+</style>

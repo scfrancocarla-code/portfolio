@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Hero from '../../components/Hero.astro';
+import Formats from '../../components/Formats.astro';
+import Viewer from '../../components/Viewer.astro';
+import WhyMe from '../../components/WhyMe.astro';
+import Contact from '../../components/Contact.astro';
+import { UI, CARDS } from '../../data/content.js';
+
+const ui = UI.en;
+const cards = CARDS.en;
+---
+<Base
+  title="Carla Franco · Direct response copywriter"
+  description="Direct response copy for every stage of the funnel: paid social ads, landing pages, homepages, VSL scripts, email marketing and real client results."
+  lang="en"
+  path="/en/"
+>
+  <Nav ui={ui} />
+  <Hero ui={ui} />
+  <Formats ui={ui} cards={cards} />
+  <Viewer cards={cards} />
+  <WhyMe ui={ui} />
+  <Contact ui={ui} />
+
+  <dialog class="lb" id="lb">
+    <button type="button" id="lbClose">Close ✕</button>
+    <img id="lbImg" alt="" />
+  </dialog>
+</Base>
+
+<script>
+  import '../../scripts/site.js';
+</script>

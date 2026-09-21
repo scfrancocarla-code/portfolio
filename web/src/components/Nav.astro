@@ -1,0 +1,19 @@
+---
+const { ui } = Astro.props;
+---
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="back" href="/"><span class="ar" aria-hidden="true">←</span><span class="t">{ui.back}</span></a>
+    <p class="brand">Carla Franco<small>{ui.role}</small></p>
+    <nav class="links" aria-label={ui.navFormats}>
+      <a href="#formats">{ui.navFormats}</a>
+      <a href="#why">{ui.navWhy}</a>
+      <a class="btn rose small" href="#contact">{ui.talk}</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .brand { margin: 0; }
+  .back { text-decoration: none; }
+</style>

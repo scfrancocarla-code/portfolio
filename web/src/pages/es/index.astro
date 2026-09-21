@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Hero from '../../components/Hero.astro';
+import Formats from '../../components/Formats.astro';
+import Viewer from '../../components/Viewer.astro';
+import WhyMe from '../../components/WhyMe.astro';
+import Contact from '../../components/Contact.astro';
+import { UI, CARDS } from '../../data/content.js';
+
+const ui = UI.es;
+const cards = CARDS.es;
+---
+<Base
+  title="Carla Franco · Copywriter de respuesta directa"
+  description="Copy de respuesta directa para todas las etapas del funnel: anuncios, landing pages, emails, VSL, webinars, dossieres comerciales y resultados reales de clientes."
+  lang="es"
+  path="/es/"
+>
+  <Nav ui={ui} />
+  <Hero ui={ui} />
+  <Formats ui={ui} cards={cards} />
+  <Viewer cards={cards} />
+  <WhyMe ui={ui} />
+  <Contact ui={ui} />
+
+  <dialog class="lb" id="lb">
+    <button type="button" id="lbClose">Cerrar ✕</button>
+    <img id="lbImg" alt="" />
+  </dialog>
+</Base>
+
+<script>
+  import '../../scripts/site.js';
+</script>

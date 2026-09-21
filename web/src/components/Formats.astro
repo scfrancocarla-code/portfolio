@@ -1,0 +1,26 @@
+---
+import { ICON, thumb } from '../data/content.js';
+const { ui, cards } = Astro.props;
+---
+<section class="formats" id="formats">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">{ui.fEyebrow}</p>
+      <h2 set:html={ui.fTitle} />
+    </div>
+    <div class:list={['cards', { c4: cards.length > 6 }]} id="cards">
+      {cards.map((c, i) => (
+        <button type="button" class="card rv" style={`--d:${i * 55}ms`} data-svc={c.k} aria-expanded="false">
+          <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={ICON[c.ic]} /></span>
+          <Fragment set:html={thumb(c.ic)} />
+          <span class="body">
+            <span class="cat">{c.cat}</span>
+            <span class="tags">{c.tags}</span>
+            <span class="cli">{c.cli}</span>
+          </span>
+          <span class="foot"><span class="link"><span class="lt">{ui.see}</span> <span class="ar" aria-hidden="true">→</span></span></span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>

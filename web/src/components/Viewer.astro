@@ -1,0 +1,24 @@
+---
+import { RENDER } from '../data/content.js';
+const { cards } = Astro.props;
+
+// Cada ejemplo se arma en el build (no depende de JavaScript en el navegador):
+// así el copy queda en el HTML, lo lee Google y se ve aunque falle el JS.
+const services = cards.map((c) => ({ key: c.k, cat: c.cat, html: RENDER[c.k]() }));
+---
+<section class="viewer" id="viewer" hidden>
+  <div class="vpills">
+    <div class="wrap" id="pills" role="tablist">
+      {services.map((s) => (
+        <button type="button" class="pill" role="tab" aria-selected="false" data-svc={s.key}>{s.cat}</button>
+      ))}
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="vbody" id="vbody">
+      {services.map((s) => (
+        <article class="svc" data-svc={s.key} hidden set:html={s.html} />
+      ))}
+    </div>
+  </div>
+</section>
